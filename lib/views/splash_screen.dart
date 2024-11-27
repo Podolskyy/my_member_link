@@ -15,11 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Delay for 3 seconds before navigating to the login screen
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()));
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -34,17 +34,20 @@ class _SplashScreenState extends State<SplashScreen> {
               style: TextStyle(
                 fontSize: 40, // Larger font size for emphasis
                 fontWeight: FontWeight.bold,
-                color: Colors.white, // White text color to contrast with dark background
+                color: Colors
+                    .white, // White text color to contrast with dark background
                 letterSpacing: 2, // Slight letter spacing for a sleek look
               ),
             ),
-            SizedBox(height: 30), // Add space between text and progress indicator
+            SizedBox(
+                height: 30), // Add space between text and progress indicator
             // CircularProgressIndicator with custom styling for an interesting design
             SizedBox(
               height: 50,
               width: 50,
               child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple), // Customize color
+                valueColor: AlwaysStoppedAnimation<Color>(
+                    Colors.deepPurple), // Customize color
                 strokeWidth: 4, // Adjust the stroke width for a sleek look
               ),
             ),
