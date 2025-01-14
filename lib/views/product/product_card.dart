@@ -91,12 +91,9 @@ class _ProductCardState extends State<ProductCard> {
                 // Add to Cart Button
                 TextButton(
                   onPressed: () {
-                    // Logic to add the product to the cart (e.g., update cart state)
-                    print('Added $selectedQuantity of ${widget.product.productName} to cart');
-                    
                     // Update the quantity after adding to the cart
                     widget.product.productQuantity = (productQuantity - selectedQuantity).toString();
-                    
+                  
                     // Callback to update the cart count
                     widget.onAddToCart(widget.product, selectedQuantity);
 

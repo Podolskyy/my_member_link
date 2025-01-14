@@ -6,8 +6,6 @@ import 'package:my_member_link/views/main_screen.dart';
 import 'package:my_member_link/views/register_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import 'package:intl/intl.dart';
-import 'package:my_member_link/views/mydrawer.dart';
 
 
 class LoginScreen extends StatefulWidget {

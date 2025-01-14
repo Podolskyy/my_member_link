@@ -74,7 +74,6 @@ class _ProductScreenState extends State<ProductScreen> {
       }
     } else {
       status = "Error loading data";
-      print("Error");
       setState(() {});
     }
   });

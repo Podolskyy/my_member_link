@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_member_link/views/membership/membership_screen.dart';
+import 'package:my_member_link/views/payment/payment_list_screen.dart';
 import 'package:my_member_link/views/product/product_screen.dart';
 import 'package:my_member_link/views/newsletter/main_screen.dart';
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
   @override
@@ -38,19 +41,64 @@ class MyDrawer extends StatelessWidget {
                   },
                 ),
               );
-
             },
             title: const Text("Newsletter"),
           ),
           const ListTile(
             title: const Text("Events"),
-              // Define onTap actions here if needed
+            // Define onTap actions here if needed
           ),
-          const ListTile(
-            title: Text("Members"),
+          ListTile(
+            title: const Text("Membership"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const MembershipScreen(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0); // Slide in from the right
+                    const end = Offset.zero;
+                    const curve = Curves.ease;
+                    var tween = Tween(begin: begin, end: end)
+                        .chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
+            },
           ),
-          const ListTile(
+          ListTile(
             title: Text("Payment"),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const PaymentListScreen(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0); // Slide in from the right
+                    const end = Offset.zero;
+                    const curve = Curves.ease;
+                    var tween = Tween(begin: begin, end: end)
+                        .chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
+            },
           ),
           ListTile(
             title: Text("Product"),
@@ -76,8 +124,7 @@ class MyDrawer extends StatelessWidget {
                   },
                 ),
               );
-
-             },
+            },
           ),
           const ListTile(
             title: Text("Vetting"),
